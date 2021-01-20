@@ -50,7 +50,7 @@ class RootVC: UIViewController {
         }
         let backButton = UIBarButtonItem()
         backButton.title = "Back"
-        //navController.navigationBar.topItem?.backBarButtonItem = backButton
+        navController.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     func  clearExistingSetting(){
