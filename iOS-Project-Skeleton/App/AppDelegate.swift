@@ -1,11 +1,12 @@
 //
 //  AppDelegate.swift
-//  iOS-Project-Skeleton
+//  Weather-MVVM
 //
 //  Created by Imran on 20/1/21.
 //
 
 import UIKit
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

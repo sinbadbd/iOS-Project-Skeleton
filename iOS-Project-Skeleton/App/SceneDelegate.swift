@@ -1,11 +1,32 @@
 //
 //  SceneDelegate.swift
-//  iOS-Project-Skeleton
+//  Weather-MVVM
 //
 //  Created by Imran on 20/1/21.
 //
 
 import UIKit
+
+
+var navController: UINavigationController = {
+    let vc =  ViewController()
+    let navigationController = UINavigationController.init(rootViewController: vc)
+    navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    navigationController.navigationBar.shadowImage = UIImage()
+    navigationController.navigationBar.tintColor = $0
+//    let font = UIFont(name: appFont, size: 20*changeFontSize)
+//    navigationController.navigationBar.titleTextAttributes = [
+//        NSAttributedString.Key.foregroundColor: $0,
+//        NSAttributedString.Key.font : font ?? UIFont.systemFont(ofSize: 18.0, weight: .regular)
+//    ]
+    return navigationController
+}(buttonColor)
+
+//extension UINavigationController {
+//    override open var childForHomeIndicatorAutoHidden: UIViewController? {
+//        return viewControllers.first
+//    }
+//}
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,6 +37,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+//        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController  = navController
+        window?.makeKeyAndVisible()
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
